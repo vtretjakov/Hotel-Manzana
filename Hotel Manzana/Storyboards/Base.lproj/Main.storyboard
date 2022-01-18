@@ -116,8 +116,11 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="238.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <datePicker contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="gtA-To-2VG">
-                                                    <rect key="frame" x="20" y="11" width="374" height="216.5"/>
+                                                <datePicker hidden="YES" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="gtA-To-2VG">
+                                                    <rect key="frame" x="20" y="11" width="374" height="216"/>
+                                                    <connections>
+                                                        <action selector="datePickerValueChanged:" destination="WTQ-j2-Fks" eventType="valueChanged" id="EfC-Mh-i2y"/>
+                                                    </connections>
                                                 </datePicker>
                                             </subviews>
                                             <constraints>
@@ -159,8 +162,11 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="238.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <datePicker contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="xsA-MT-AVy">
-                                                    <rect key="frame" x="20" y="11" width="374" height="216.5"/>
+                                                <datePicker hidden="YES" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="xsA-MT-AVy">
+                                                    <rect key="frame" x="20" y="11" width="374" height="216"/>
+                                                    <connections>
+                                                        <action selector="datePickerValueChanged:" destination="WTQ-j2-Fks" eventType="valueChanged" id="4dk-5x-P3w"/>
+                                                    </connections>
                                                 </datePicker>
                                             </subviews>
                                             <constraints>
