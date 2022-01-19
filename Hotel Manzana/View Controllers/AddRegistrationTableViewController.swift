@@ -33,6 +33,7 @@ class AddRegistrationTableViewController: UITableViewController {
     
     @IBOutlet var numberOfChildrenStepper: UIStepper!
     
+    @IBOutlet var wifiSwitch: UISwitch!
     
     // MARK: - Properties
     
@@ -99,6 +100,9 @@ class AddRegistrationTableViewController: UITableViewController {
         let email = emailTextField.text ?? "" // получение данных
         let checkInDate = checkInDatePicker.date
         let checkOutDate = checkOutDatePicker.date
+        let numberOfAdults = Int(numberOfAdultsStepper.value)
+        let numberOfChildren = Int(numberOfChildrenStepper.value)
+        let wifi = wifiSwitch.isOn
         
         let registration = Registration(
             firstName: firstName,
@@ -106,22 +110,22 @@ class AddRegistrationTableViewController: UITableViewController {
             emailAdress: email,
             checkInDate: checkInDate,
             checkOutDate: checkOutDate,
-            numberOfAdults: 0,
-            numberOfChildren: 0,
+            numberOfAdults: numberOfAdults,
+            numberOfChildren: numberOfChildren,
             roomType: RoomType(
                 id: 0,
                 name: "",
                 shortName: "",
                 price: 0),
-            wifi: false)
-        
+            wifi: wifi
+        )
+        print(#line, #function, registration)
     }
-}
 
-@IBAction func stepperValueChanged (_ sender: UIStepper) {
+@IBAction func stepperValueChanged(_ sender: UIStepper) {
     updateNumberOfGuests()
 } // для того чтобы происходило автоматом, вызывается когда нажимаетмся степпер
-
+}
 extension AddRegistrationTableViewController /* UITableViewDataSource */ {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
