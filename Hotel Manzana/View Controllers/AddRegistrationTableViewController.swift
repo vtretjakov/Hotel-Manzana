@@ -25,12 +25,20 @@ class AddRegistrationTableViewController: UITableViewController {
     
     @IBOutlet var checkOutDatePicker: UIDatePicker!
     
+    @IBOutlet var numberOfAdultsLabel: UILabel!
+    
+    @IBOutlet var numberOfAdultsStepper: UIStepper!
+    
+    @IBOutlet var numberOfChildrenLabel: UILabel!
+    
+    @IBOutlet var numberOfChildrenStepper: UIStepper!
+    
+    
     // MARK: - Properties
     
     let checkInDateLabelIndexPath = IndexPath(row: 0, section: 1)
-    let checkOutDateLabelIndexPath = IndexPath(row: 2, section: 1) // AddRegistrationTableViewController
-    
     let checkInDatePickerIndexPath = IndexPath(row: 1, section: 1)
+    let checkOutDateLabelIndexPath = IndexPath(row: 2, section: 1) // AddRegistrationTableViewController
     let checkOutDatePickerIndexPath = IndexPath(row: 3, section: 1)
     
     var isCheckInDatePickerShown: Bool = false {
@@ -72,6 +80,13 @@ class AddRegistrationTableViewController: UITableViewController {
         checkOutDateLabel.text = dateFormatter.string(from: checkInDatePicker.date)
     }
     
+    func updateNumberOfGuests() {
+        let numberOfAdults = Int(numberOfAdultsStepper.value)
+        let numberOfChildren = Int(numberOfChildrenStepper.value)
+        numberOfAdultsLabel.text = "\(numberOfAdults)"
+        numberOfChildrenLabel.text = "\(numberOfChildren)"
+    }
+    
     // MARK: - Action
     
     @IBAction func datePickerValueChanged(_ sender: UIDatePicker) {
@@ -103,6 +118,10 @@ class AddRegistrationTableViewController: UITableViewController {
     }
 }
 
+@IBAction func stepperValueChanged (_ sender: UIStepper) {
+    updateNumberOfGuests()
+} // для того чтобы происходило автоматом, вызывается когда нажимаетмся степпер
+
 extension AddRegistrationTableViewController /* UITableViewDataSource */ {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
@@ -130,6 +149,10 @@ extension AddRegistrationTableViewController /*: UITableViewDelegate */ {
         default:
             return
         }
+        /* вместо релоаддата можно:
+        tableView.beginUpdates()
+        tableView.endUpdates() */
+        tableView.reloadData()
     }
 }
-// после нажатия на дэйт появляется дэйт пикер
+// после нажатия на дэйт появляется дэйт пикер,если нажимаем на один а второй при этом показан второй должен исчезнуть

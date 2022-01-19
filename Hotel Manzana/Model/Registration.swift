@@ -14,6 +14,7 @@ struct Registration {
     
     var checkInDate: Date // дата заезда
     var checkOutDate: Date // дата выезда
+    
     var numberOfAdults: Int // количество гостей
     var numberOfChildren: Int
     
