@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		C449DDFF279395D800137B58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C449DDFE279395D800137B58 /* AppDelegate.swift */; };
-		C449DE01279395D800137B58 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C449DE00279395D800137B58 /* SceneDelegate.swift */; };
 		C449DE06279395D800137B58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C449DE04279395D800137B58 /* Main.storyboard */; };
 		C449DE08279395DA00137B58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C449DE07279395DA00137B58 /* Assets.xcassets */; };
 		C449DE0B279395DA00137B58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C449DE09279395DA00137B58 /* LaunchScreen.storyboard */; };
@@ -17,12 +16,15 @@
 		C449DE1C2793A7DA00137B58 /* AddRegistrationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C449DE1B2793A7DA00137B58 /* AddRegistrationTableViewController.swift */; };
 		C449DE1F2799607700137B58 /* SelectRoomTypeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C449DE1E2799607700137B58 /* SelectRoomTypeTableViewController.swift */; };
 		C449DE222799661600137B58 /* SelectRoomTypeTableViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C449DE212799661600137B58 /* SelectRoomTypeTableViewControllerProtocol.swift */; };
+		C449DE25279BB18100137B58 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C449DE24279BB18100137B58 /* SceneDelegate.swift */; };
+		C449DE29279BB21C00137B58 /* Screenshot01.png in Resources */ = {isa = PBXBuildFile; fileRef = C449DE26279BB21C00137B58 /* Screenshot01.png */; };
+		C449DE2A279BB21C00137B58 /* Screenshot02.png in Resources */ = {isa = PBXBuildFile; fileRef = C449DE27279BB21C00137B58 /* Screenshot02.png */; };
+		C449DE2B279BB21C00137B58 /* Screenshot03.png in Resources */ = {isa = PBXBuildFile; fileRef = C449DE28279BB21C00137B58 /* Screenshot03.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C449DDFB279395D800137B58 /* Hotel Manzana.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hotel Manzana.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C449DDFE279395D800137B58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C449DE00279395D800137B58 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C449DE05279395D800137B58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C449DE07279395DA00137B58 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C449DE0A279395DA00137B58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -32,6 +34,10 @@
 		C449DE1B2793A7DA00137B58 /* AddRegistrationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRegistrationTableViewController.swift; sourceTree = "<group>"; };
 		C449DE1E2799607700137B58 /* SelectRoomTypeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectRoomTypeTableViewController.swift; sourceTree = "<group>"; };
 		C449DE212799661600137B58 /* SelectRoomTypeTableViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectRoomTypeTableViewControllerProtocol.swift; sourceTree = "<group>"; };
+		C449DE24279BB18100137B58 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		C449DE26279BB21C00137B58 /* Screenshot01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Screenshot01.png; sourceTree = "<group>"; };
+		C449DE27279BB21C00137B58 /* Screenshot02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Screenshot02.png; sourceTree = "<group>"; };
+		C449DE28279BB21C00137B58 /* Screenshot03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Screenshot03.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,7 +73,7 @@
 				C449DE1A2793A69400137B58 /* App */,
 				C449DE1227939CD000137B58 /* Model */,
 				C449DE20279965A700137B58 /* Protocols */,
-				C449DE00279395D800137B58 /* SceneDelegate.swift */,
+				C449DE23279BAF7E00137B58 /* Screenshots */,
 				C449DE182793A64700137B58 /* Storyboards */,
 				C449DE172793A5EF00137B58 /* View Controllers */,
 			);
@@ -107,6 +113,7 @@
 				C449DDFE279395D800137B58 /* AppDelegate.swift */,
 				C449DE07279395DA00137B58 /* Assets.xcassets */,
 				C449DE0C279395DA00137B58 /* Info.plist */,
+				C449DE24279BB18100137B58 /* SceneDelegate.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -117,6 +124,16 @@
 				C449DE212799661600137B58 /* SelectRoomTypeTableViewControllerProtocol.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		C449DE23279BAF7E00137B58 /* Screenshots */ = {
+			isa = PBXGroup;
+			children = (
+				C449DE26279BB21C00137B58 /* Screenshot01.png */,
+				C449DE27279BB21C00137B58 /* Screenshot02.png */,
+				C449DE28279BB21C00137B58 /* Screenshot03.png */,
+			);
+			path = Screenshots;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,6 +196,9 @@
 			files = (
 				C449DE0B279395DA00137B58 /* LaunchScreen.storyboard in Resources */,
 				C449DE08279395DA00137B58 /* Assets.xcassets in Resources */,
+				C449DE2B279BB21C00137B58 /* Screenshot03.png in Resources */,
+				C449DE29279BB21C00137B58 /* Screenshot01.png in Resources */,
+				C449DE2A279BB21C00137B58 /* Screenshot02.png in Resources */,
 				C449DE06279395D800137B58 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -191,12 +211,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				C449DE1F2799607700137B58 /* SelectRoomTypeTableViewController.swift in Sources */,
+				C449DE25279BB18100137B58 /* SceneDelegate.swift in Sources */,
 				C449DE222799661600137B58 /* SelectRoomTypeTableViewControllerProtocol.swift in Sources */,
 				C449DE1627939F9500137B58 /* RoomType.swift in Sources */,
 				C449DE1C2793A7DA00137B58 /* AddRegistrationTableViewController.swift in Sources */,
 				C449DDFF279395D800137B58 /* AppDelegate.swift in Sources */,
 				C449DE1427939E6700137B58 /* Registration.swift in Sources */,
-				C449DE01279395D800137B58 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

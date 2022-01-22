@@ -7,11 +7,20 @@
 
 import UIKit
 
+// UserDefaults
+
 struct KeysDefaults {
     static let keyNew = "new"
 }
 
 class AddRegistrationTableViewController: UITableViewController {
+    
+    // HideKeyboard
+
+        @objc
+        private func hideKeyboard() {
+            self.view.endEditing(true)
+        }
     
     // UserDefaults
     
@@ -81,8 +90,13 @@ class AddRegistrationTableViewController: UITableViewController {
         //  UserDefaults
         
         firstNameTextField?.text = defaults.string(forKey: KeysDefaults.keyNew)
-        lastNameTextField?.text = defaults.string(forKey: KeysDefaults.keyNew)
-        emailTextField?.text = defaults.string(forKey: KeysDefaults.keyNew)
+        
+        // HideKeyboard
+        let tapGesture = UITapGestureRecognizer(target: self,
+                                                action: #selector(hideKeyboard))
+        tapGesture.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(tapGesture)
+        
     }
     
     // MARK: - Navigation
@@ -157,20 +171,10 @@ class AddRegistrationTableViewController: UITableViewController {
     // UserDefaults
     
     @IBAction func saveButton(_ sender: Any) {
-        
         let first = firstNameTextField.text!
-        let last = lastNameTextField.text!
-        let mail = emailTextField.text!
-        
-        if !first.isEmpty {
+        if !first.isEmpty && lastNameTextField.text != firstNameTextField.text && emailTextField.text != firstNameTextField.text {
             defaults.set(first, forKey: KeysDefaults.keyNew)
         }
-        if !last.isEmpty {
-            defaults.set(last, forKey: KeysDefaults.keyNew)
-        }
-        if !mail.isEmpty {
-            defaults.set(mail, forKey: KeysDefaults.keyNew)
-        } 
     }
     
 @IBAction func stepperValueChanged(_ sender: UIStepper) {
