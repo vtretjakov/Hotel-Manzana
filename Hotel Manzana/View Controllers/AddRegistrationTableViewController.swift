@@ -7,7 +7,15 @@
 
 import UIKit
 
+struct KeysDefaults {
+    static let keyNew = "new"
+}
+
 class AddRegistrationTableViewController: UITableViewController {
+    
+    // UserDefaults
+    
+    let defaults = UserDefaults.standard
     
     // MARK: - Outlets
     
@@ -35,6 +43,9 @@ class AddRegistrationTableViewController: UITableViewController {
     
     @IBOutlet var wifiSwitch: UISwitch!
     
+    @IBOutlet var roomTypeLabel: UILabel!
+    
+    
     // MARK: - Properties
     
     let checkInDateLabelIndexPath = IndexPath(row: 0, section: 1)
@@ -54,7 +65,7 @@ class AddRegistrationTableViewController: UITableViewController {
     }
     // чтобы изначально были спрятанны в сторибоард ставим хидден
     
-    
+    var roomType: RoomType?
     
     // MARK: - UIViewController Methods
     
@@ -64,6 +75,23 @@ class AddRegistrationTableViewController: UITableViewController {
         checkInDatePicker.minimumDate = midnightToday
         checkInDatePicker.date = midnightToday
         updateDateViews()
+        updateNumberOfGuests()
+        updateRoomType()
+        
+        //  UserDefaults
+        
+        firstNameTextField?.text = defaults.string(forKey: KeysDefaults.keyNew)
+        lastNameTextField?.text = defaults.string(forKey: KeysDefaults.keyNew)
+        emailTextField?.text = defaults.string(forKey: KeysDefaults.keyNew)
+    }
+    
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "SelectRoomType" else {return}
+        let destination = segue.destination as! SelectRoomTypeTableViewController
+        destination.delegate = self
+        destination.roomType = roomType
     }
     
     // MARK: - UI Methods
@@ -86,6 +114,14 @@ class AddRegistrationTableViewController: UITableViewController {
         let numberOfChildren = Int(numberOfChildrenStepper.value)
         numberOfAdultsLabel.text = "\(numberOfAdults)"
         numberOfChildrenLabel.text = "\(numberOfChildren)"
+    }
+    
+    func updateRoomType() {
+        if let roomType = roomType {
+            roomTypeLabel.text = roomType.name
+        } /* если есть то ставим текст*/ else {
+        roomTypeLabel.text = "Not Set"
+    }
     }
     
     // MARK: - Action
@@ -112,16 +148,31 @@ class AddRegistrationTableViewController: UITableViewController {
             checkOutDate: checkOutDate,
             numberOfAdults: numberOfAdults,
             numberOfChildren: numberOfChildren,
-            roomType: RoomType(
-                id: 0,
-                name: "",
-                shortName: "",
-                price: 0),
+            roomType: roomType,
             wifi: wifi
         )
         print(#line, #function, registration)
     }
 
+    // UserDefaults
+    
+    @IBAction func saveButton(_ sender: Any) {
+        
+        let first = firstNameTextField.text!
+        let last = lastNameTextField.text!
+        let mail = emailTextField.text!
+        
+        if !first.isEmpty {
+            defaults.set(first, forKey: KeysDefaults.keyNew)
+        }
+        if !last.isEmpty {
+            defaults.set(last, forKey: KeysDefaults.keyNew)
+        }
+        if !mail.isEmpty {
+            defaults.set(mail, forKey: KeysDefaults.keyNew)
+        } 
+    }
+    
 @IBAction func stepperValueChanged(_ sender: UIStepper) {
     updateNumberOfGuests()
 } // для того чтобы происходило автоматом, вызывается когда нажимаетмся степпер
@@ -160,3 +211,16 @@ extension AddRegistrationTableViewController /*: UITableViewDelegate */ {
     }
 }
 // после нажатия на дэйт появляется дэйт пикер,если нажимаем на один а второй при этом показан второй должен исчезнуть
+
+// destination.delegate = self    Cannot assign value of type 'AddRegistrationTableViewController' to type 'SelectRoomTypeTableViewControllerProtocol?' - для исправления ошибки добавим:
+
+// MARK: - SelectRoomTypeTableViewControllerProtocol
+
+extension AddRegistrationTableViewController: SelectRoomTypeTableViewControllerProtocol {
+    func didSelect(roomType: RoomType) {
+        self.roomType = roomType
+        updateRoomType()
+    }
+    
+    
+}

@@ -300,6 +300,33 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="M2A-81-m6I" detailTextLabel="jKn-TK-qqY" style="IBUITableViewCellStyleValue1" id="cV7-5A-FoK">
+                                        <rect key="frame" x="0.0" y="686" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cV7-5A-FoK" id="aoO-NA-vAD">
+                                            <rect key="frame" x="0.0" y="0.0" width="384.5" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Room Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="M2A-81-m6I">
+                                                    <rect key="frame" x="20" y="11" width="90.5" height="21.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Not Set" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jKn-TK-qqY">
+                                                    <rect key="frame" x="316" y="11" width="60.5" height="21.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="FI1-rr-xZb" kind="show" identifier="SelectRoomType" id="uj9-Dg-2qb"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -309,6 +336,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Registration" id="XGE-oa-HnK">
+                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="save" id="2Q9-Ea-Vng">
+                            <connections>
+                                <action selector="saveButton:" destination="WTQ-j2-Fks" id="svy-bd-ikZ"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="u8J-CU-AzA">
                             <connections>
                                 <action selector="doneBarButtonTapped:" destination="WTQ-j2-Fks" id="YVO-Jd-qYf"/>
@@ -327,12 +359,58 @@
                         <outlet property="numberOfAdultsStepper" destination="xAF-hy-0Ho" id="aNC-YZ-hBs"/>
                         <outlet property="numberOfChildrenLabel" destination="xLa-ir-ALW" id="S0D-ih-j0L"/>
                         <outlet property="numberOfChildrenStepper" destination="CTr-hW-yC5" id="Kgn-PW-OkV"/>
+                        <outlet property="roomTypeLabel" destination="jKn-TK-qqY" id="ufd-eN-TcB"/>
                         <outlet property="wifiSwitch" destination="mfO-IF-tF6" id="1fN-8G-u1d"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OGx-8u-4jV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="968.11594202898561" y="103.79464285714285"/>
+        </scene>
+        <!--Room Selection-->
+        <scene sceneID="Zgh-92-cbD">
+            <objects>
+                <tableViewController id="FI1-rr-xZb" customClass="SelectRoomTypeTableViewController" customModule="Hotel_Manzana" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="ng5-Eq-Ntq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RoomTypeCell" textLabel="UAb-Xs-dzg" detailTextLabel="y4I-IZ-S48" style="IBUITableViewCellStyleValue1" id="QO9-w9-qZq">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QO9-w9-qZq" id="A7m-ZM-88Y">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Penthouse Suite" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UAb-Xs-dzg">
+                                            <rect key="frame" x="20" y="11" width="131" height="21.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="$ 309" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="y4I-IZ-S48">
+                                            <rect key="frame" x="345.5" y="11" width="48.5" height="21.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="FI1-rr-xZb" id="J1d-jF-CTQ"/>
+                            <outlet property="delegate" destination="FI1-rr-xZb" id="c39-pv-bb5"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Room Selection" id="syO-w3-WMA"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oiE-BW-grE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1801" y="104"/>
         </scene>
         <!--Registratio-->
         <scene sceneID="1T8-Pk-trd">

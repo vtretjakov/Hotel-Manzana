@@ -15,6 +15,8 @@
 		C449DE1427939E6700137B58 /* Registration.swift in Sources */ = {isa = PBXBuildFile; fileRef = C449DE1327939E6700137B58 /* Registration.swift */; };
 		C449DE1627939F9500137B58 /* RoomType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C449DE1527939F9500137B58 /* RoomType.swift */; };
 		C449DE1C2793A7DA00137B58 /* AddRegistrationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C449DE1B2793A7DA00137B58 /* AddRegistrationTableViewController.swift */; };
+		C449DE1F2799607700137B58 /* SelectRoomTypeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C449DE1E2799607700137B58 /* SelectRoomTypeTableViewController.swift */; };
+		C449DE222799661600137B58 /* SelectRoomTypeTableViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C449DE212799661600137B58 /* SelectRoomTypeTableViewControllerProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		C449DE1327939E6700137B58 /* Registration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration.swift; sourceTree = "<group>"; };
 		C449DE1527939F9500137B58 /* RoomType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomType.swift; sourceTree = "<group>"; };
 		C449DE1B2793A7DA00137B58 /* AddRegistrationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRegistrationTableViewController.swift; sourceTree = "<group>"; };
+		C449DE1E2799607700137B58 /* SelectRoomTypeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectRoomTypeTableViewController.swift; sourceTree = "<group>"; };
+		C449DE212799661600137B58 /* SelectRoomTypeTableViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectRoomTypeTableViewControllerProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,7 @@
 			children = (
 				C449DE1A2793A69400137B58 /* App */,
 				C449DE1227939CD000137B58 /* Model */,
+				C449DE20279965A700137B58 /* Protocols */,
 				C449DE00279395D800137B58 /* SceneDelegate.swift */,
 				C449DE182793A64700137B58 /* Storyboards */,
 				C449DE172793A5EF00137B58 /* View Controllers */,
@@ -82,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				C449DE1B2793A7DA00137B58 /* AddRegistrationTableViewController.swift */,
+				C449DE1E2799607700137B58 /* SelectRoomTypeTableViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -103,6 +109,14 @@
 				C449DE0C279395DA00137B58 /* Info.plist */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		C449DE20279965A700137B58 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				C449DE212799661600137B58 /* SelectRoomTypeTableViewControllerProtocol.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,6 +190,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C449DE1F2799607700137B58 /* SelectRoomTypeTableViewController.swift in Sources */,
+				C449DE222799661600137B58 /* SelectRoomTypeTableViewControllerProtocol.swift in Sources */,
 				C449DE1627939F9500137B58 /* RoomType.swift in Sources */,
 				C449DE1C2793A7DA00137B58 /* AddRegistrationTableViewController.swift in Sources */,
 				C449DDFF279395D800137B58 /* AppDelegate.swift in Sources */,
